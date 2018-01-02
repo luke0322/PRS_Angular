@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.component-content{
+
+}
+.lefthalf{
+	display: inline-block;
+	width: 49%;
+}
+.righthalf{
+	display: inline-block;
+	width: 49%;
+	text-align: right;
+}
