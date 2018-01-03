@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { SortPipe } from './util/sort-pipe';
 
 import { FormsModule} from '@angular/forms';
-import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
@@ -30,7 +30,6 @@ import { UserEditComponent } from './feature/user/user-edit/user-edit.component'
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientXsrfModule.disable(),
     AppRoutingModule //always do this at the end
 
   ],

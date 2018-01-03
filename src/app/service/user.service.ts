@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../model/user';
 
 const url ='http://localhost:8080/Users/'; //we have this one time for service
-const headers: HttpHeaders = new HttpHeaders({'X-Requested-With': 'XMLHttpRequest'});
 
 
 @Injectable()
 export class UserService {
 
-	users: User[];
+	//users: User[];
 
-	authenticate(user: User): Observable<User[]>{
-		return this.http.post(url + "Authenticate", user) as Observable<User[]>;
-	 }
+	// authenticate(user: User): Observable<User[]>{
+	// 	return this.http.post(url + "Authenticate", user) as Observable<User[]>;
+	//  }
 
 	list(): Observable<User[]>{
 		return this.http.get(url + "List") as Observable<User[]>;
@@ -24,17 +23,22 @@ export class UserService {
 
 
 	get(id): Observable<User[]>{
-		console.log(id); //we need a json object returned
+		//console.log(id); //we need a json object returned
 		return this.http.get(url +"Get?id=" + id) as Observable<User[]>;
 	}
 
-	create(user: User){
-		return this.http.post(url + "Add", user, { headers: headers }) as Observable<any>;
+	add(user: User){
+		return this.http.post(url + "Add", user) as Observable<any>;
 		//will look like localhost:8080/Users/List get call
 	}
 
-	remove(user: User){
-		return this.http.post(url + "Delete", user, { headers: headers }) as Observable<any>;
+	delete(id): Observable<any>{
+		return this.http.get(url + "Delete?id=" + id) as Observable<any>;
+		//will look like localhost:8080/Users/List get call
+	}
+
+	change(user: User){
+		return this.http.post(url + "Change", user) as Observable<any>;
 		//will look like localhost:8080/Users/List get call
 	}
 
