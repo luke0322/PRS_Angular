@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UserService} from '../../../service/user.service';
+import { User } from '../../../model/user';
 
 @Component({
   selector: 'app-user-edit',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditComponent implements OnInit {
 
-  constructor() { }
+  title: string = "User Edit";
+
+  id: string;
+  resp: any;
+
+  user: User;
+
+  change(){
+     console.log("this.user", this.user);
+   	 this.UserSvc.change(this.user)
+   		.subscribe(resp =>{
+   			this.resp = resp;
+  			console.log("User Change:", this.resp);
+  			this.router.navigate(['/user/list']);
+   		});
+   }
+  constructor(private UserSvc: UserService,
+  			  private router: Router,
+  			  private route: ActivatedRoute) { }
 
   ngOnInit() {
+  	this.route.params.subscribe(parms => this.id = parms['id']);
+  	 this.UserSvc.get(this.id)
+  	 	.subscribe(users => {
+         this.user = users.length > 0 ? users[0]: null;
+         console.log(this.user);
+       });
   }
 
 }

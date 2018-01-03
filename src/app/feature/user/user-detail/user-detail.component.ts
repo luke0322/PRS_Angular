@@ -35,7 +35,6 @@ export class UserDetailComponent implements OnInit {
   	 this.UserSvc.get(this.id)
   	 	.subscribe(users => {
          this.user = users.length > 0 ? users[0]: null;
-         console.log(this.user);
        });
   }
 

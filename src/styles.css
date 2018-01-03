@@ -5,9 +5,16 @@
 .lefthalf{
 	display: inline-block;
 	width: 49%;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 .righthalf{
 	display: inline-block;
 	width: 49%;
 	text-align: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.formatcomps{
+
 }
