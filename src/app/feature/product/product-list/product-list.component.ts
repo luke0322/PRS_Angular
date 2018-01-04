@@ -11,7 +11,7 @@ import { Product } from '../../../model/product';
 export class ProductListComponent implements OnInit {
 
   title: string ='Product List';
-  selectedSortKey: string = 'LastName';
+  selectedSortKey: string = 'Vendor';
   sortDesc: string = 'asc';
   sortKeys: string[] = Product.sortableKeys;
   products: Product[];

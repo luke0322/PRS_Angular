@@ -15,9 +15,10 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
-
+import { AboutComponent } from './core/about/about.component';
 
 const routes: Routes =[
+{path: 'about', component: AboutComponent},
 {path: 'user/detail/:id', component: UserDetailComponent},
 {path: 'user/edit/:id', component: UserEditComponent},
 {path: 'user/create', component: UserCreateComponent},
