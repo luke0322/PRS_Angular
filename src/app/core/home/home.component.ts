@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { } //default constructor included, injecting services(user service)
+  constructor() { }
 
   ngOnInit() {
   }

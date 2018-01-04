@@ -28,6 +28,7 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { AboutComponent } from './core/about/about.component';
+import { HomeComponent } from './core/home/home.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AboutComponent } from './core/about/about.component';
     ProductDetailComponent,
     ProductCreateComponent,
     ProductEditComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@
 
 	<div *ngIf='product'>
 		<div class = 'form-group row'>
-				<label class = 'col-form-label col-sm-4' for="productvendor"> Vendor:</label>
+				<label class = 'col-form-label col-sm-4' for="productvendor">Vendor:</label>
 			<div class = 'col-sm-4 select-list'>
 				<select [(ngModel)]= 'product.Vendor' class='form-control' name='Vendor' id='product-Vendor'>
 					<option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]='vendor.Id == product.Vendor.Id'>{{vendor.Name}}</option>

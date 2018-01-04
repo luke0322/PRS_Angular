@@ -10,7 +10,7 @@ export class Product{
 		console.log(this);
 	}
 
-	static sortableKeys = ['Name','Unit','Price','PartNumber','PhotoPath', 'Vendor'];
+	static sortableKeys = ['Id','Name','Unit','Price','PartNumber','PhotoPath', 'Vendor'];
 
 	constructor(Id: number = 0, PartNumber: string = '',Name: string = '',Price: number = 0, Unit: string = '',
 		PhotoPath: string = '',Vendor: string = ''){

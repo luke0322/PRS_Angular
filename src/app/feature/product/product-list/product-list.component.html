@@ -22,6 +22,7 @@
 <table class = "table table-sm" *ngIf='products'>
 
 <tr>
+	<th>ID</th>
 	<th>Unit</th>
 	<th>PartNumber</th>
 	<th>Name</th>
@@ -31,7 +32,7 @@
 
 </tr> 
 <tr *ngFor='let product of products | sort:selectedSortKey:sortDesc'>
-
+		<td>{{product.Id}}</td> 
 		<td>{{product.Unit}}</td> 
 		<td>{{product.PartNumber}}</td>
 		<td>{{product.Name}}</td>

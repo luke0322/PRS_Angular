@@ -16,12 +16,12 @@ export class ProductCreateComponent implements OnInit {
   id: string;
   resp: any;
 
-  product: Product = new Product(0,'','',null,'');
+  product: Product = new Product(0,'','',null,'','','');
   vendors: Vendor[]; //used for dropdown box
 
   add(){
      console.log("this.product", this.product);
-   	 this.ProductSvc.change(this.product)
+   	 this.ProductSvc.add(this.product)
    		.subscribe(resp =>{
    			this.resp = resp;
   			console.log("Product Add:", this.resp);
@@ -35,13 +35,6 @@ export class ProductCreateComponent implements OnInit {
   			  private route: ActivatedRoute) { }
 
   ngOnInit() {
-  	this.route.params.subscribe(parms => this.id = parms['id']);
-  	 this.ProductSvc.get(this.id)
-  	 	.subscribe(products => {
-         this.product = products.length > 0 ? products[0]: null;
-         console.log(this.product);
-       });
-
   	 this.VendorSvc.list() //new call to vendor service, for dropdown list
   	 	 .subscribe(vendors=> this.vendors = vendors);
   }
