@@ -17,6 +17,8 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { AboutComponent } from './core/about/about.component';
 
+import { StatusListComponent } from './feature/status/status-list/status-list.component';
+
 const routes: Routes =[
 {path: 'about', component: AboutComponent},
 {path: 'user/detail/:id', component: UserDetailComponent},
@@ -32,7 +34,9 @@ const routes: Routes =[
 {path: 'product/detail/:id', component: ProductDetailComponent},
 {path: 'product/edit/:id', component: ProductEditComponent},
 {path: 'product/create', component: ProductCreateComponent},
-{path: 'product/list', component: ProductListComponent}
+{path: 'product/list', component: ProductListComponent},
+
+{path: 'status', component: StatusListComponent}
 ];
 
 @NgModule({

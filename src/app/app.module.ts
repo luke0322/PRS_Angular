@@ -6,6 +6,7 @@ import { UserService} from './service/user.service';
 
 import { VendorService } from './service/vendor.service';
 import { ProductService } from './service/product.service';
+import { StatusService } from './service/status.service';
 import { AppComponent } from './app.component';
 import { SortPipe } from './util/sort-pipe';
 
@@ -29,6 +30,7 @@ import { ProductCreateComponent } from './feature/product/product-create/product
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { AboutComponent } from './core/about/about.component';
 import { HomeComponent } from './core/home/home.component';
+import { StatusListComponent } from './feature/status/status-list/status-list.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { HomeComponent } from './core/home/home.component';
     ProductCreateComponent,
     ProductEditComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    StatusListComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { HomeComponent } from './core/home/home.component';
   providers: [
  	UserService,
   VendorService,
-  ProductService], //we put our services here
+  ProductService,
+  StatusService], //we put our services here
   bootstrap: [AppComponent]
 })
 export class AppModule { }

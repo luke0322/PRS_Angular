@@ -33,7 +33,7 @@ export class ProductEditComponent implements OnInit {
 
    // compareFn(v1: Vendor, v2: Vendor): boolean{
    // 		return v1 &&
-   // }
+   // } we may need this for product edit to work (test thoroughly)
 
 
   constructor(private ProductSvc: ProductService,
