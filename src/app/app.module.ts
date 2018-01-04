@@ -31,6 +31,10 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
 import { AboutComponent } from './core/about/about.component';
 import { HomeComponent } from './core/home/home.component';
 import { StatusListComponent } from './feature/status/status-list/status-list.component';
+import { PurchaserequestListComponent } from './feature/purchaserequest/purchaserequest-list/purchaserequest-list.component';
+import { PurchaserequestDetailComponent } from './feature/purchaserequest/purchaserequest-detail/purchaserequest-detail.component';
+import { PurchaserequestCreateComponent } from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
+import { PurchaserequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { StatusListComponent } from './feature/status/status-list/status-list.co
     ProductEditComponent,
     AboutComponent,
     HomeComponent,
-    StatusListComponent
+    StatusListComponent,
+    PurchaserequestListComponent,
+    PurchaserequestDetailComponent,
+    PurchaserequestCreateComponent,
+    PurchaserequestEditComponent
   ],
   imports: [
     BrowserModule,
