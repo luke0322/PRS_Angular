@@ -1,22 +1,23 @@
-
-	<div class ='form-group row'>
+<div class ="loginformat">
+	<div class ='form-group row' style="margin-left: 120px; text-align: center; margin-top: 20px;">
 
 		<label class = 'col-form-label col-sm-2' for='username'>Username:</label>
 		<input [(ngModel)]='user.UserName' name = 'Username' type ='text' class = 'form-control col-sm-4' id ='username' aria-describedby="emailHelp" placeholder="Username">
 		<small id="emailHelp" class="form-text text-muted col-sm-2"></small>
 
 	</div>
-	<div class ='form-group row'>
+	<div class ='form-group row' style="margin-left: 120px; text-align: center;">
 
 		<label class = 'col-form-label col-sm-2' for='userfirstname'>Password:</label>
 		<input [(ngModel)]='user.Password' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='userfirstname' aria-describedby="emailHelp" placeholder="Password">
 		<small id="emailHelp" class="form-text text-muted col-sm-2"></small>
 
 	</div>
-	<div class ="form-group" style="margin-left: 150px;">
+	<div class ="form-group" style="margin-right: 180px; text-align: center;">
 		<button (click)='login()' class="btn btn-primary">Login</button> 
 
 	</div>
-	<div class="form-group" style="margin-left: 150px;">
+	<div class="form-group" style="margin-left: 120px; text-align: center;">
 		<span>{{this.message}}</span>
 	</div>
+</div>

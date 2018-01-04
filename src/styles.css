@@ -24,7 +24,10 @@
 }
 
 .loginformat{
-	text-align: center;
-	margin-top: 100px;
-	margin-left: 100px;
+	border-color: black;
+	border-width: 3px;
+	border-style: solid;
+	margin-top: 140px;
+	margin-left: 130px;
+	margin-right: 130px;
 }
