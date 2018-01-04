@@ -10,6 +10,10 @@ const url ='http://localhost:8080/Users/'; //we have this one time for service
 @Injectable()
 export class UserService {
 
+	authenticate(uname: string, pwd: string): Observable<User[]> {
+   		return this.http.get(url+"Authenticate?uname="+uname+"&pwd="+pwd) as Observable<User[]>;
+	}
+
 	list(): Observable<User[]>{
 		return this.http.get(url + "List") as Observable<User[]>;
 		//will look like localhost:8080/Users/List get call

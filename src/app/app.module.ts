@@ -7,6 +7,8 @@ import { UserService} from './service/user.service';
 import { VendorService } from './service/vendor.service';
 import { ProductService } from './service/product.service';
 import { StatusService } from './service/status.service';
+import { SystemService } from './service/system.service';
+
 import { PurchaserequestService } from './service/purchaserequest.service';
 import { AppComponent } from './app.component';
 import { SortPipe } from './util/sort-pipe';
@@ -36,6 +38,7 @@ import { PurchaserequestListComponent } from './feature/purchaserequest/purchase
 import { PurchaserequestDetailComponent } from './feature/purchaserequest/purchaserequest-detail/purchaserequest-detail.component';
 import { PurchaserequestCreateComponent } from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
 import { PurchaserequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,8 @@ import { PurchaserequestEditComponent } from './feature/purchaserequest/purchase
     PurchaserequestListComponent,
     PurchaserequestDetailComponent,
     PurchaserequestCreateComponent,
-    PurchaserequestEditComponent
+    PurchaserequestEditComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,8 @@ import { PurchaserequestEditComponent } from './feature/purchaserequest/purchase
   VendorService,
   ProductService,
   StatusService,
-  PurchaserequestService], //we put our services here
+  PurchaserequestService,
+  SystemService], //we put our services here
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -31,8 +31,8 @@ export class ProductEditComponent implements OnInit {
    		});
    }
 
-   // compareFn(v1: Vendor, v2: Vendor): boolean{
-   // 		return v1 &&
+   // compareFn(v1: number, v2: number):boolean{
+   // 		return v1 == v2;
    // } we may need this for product edit to work (test thoroughly)
 
 

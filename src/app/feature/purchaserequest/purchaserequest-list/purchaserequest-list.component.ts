@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PurchaserequestService } from '../../../service/purchaserequest.service';
 import { PurchaseRequest } from '../../../model/purchaserequest';
+import { UserService } from '../../../service/user.service';
+import { User } from '../../../model/user';
 
 @Component({
   selector: 'app-purchaserequest-list',
@@ -24,4 +26,16 @@ export class PurchaserequestListComponent implements OnInit {
       console.log(purchaseRequests);
   	});
   }
+
+  // addUserName(users: User[]) {
+  //  for(let user of users) {
+  //     console.log("Getting username for userId: " + user.Id);
+  //     this.PurchaseRequestSvc.get(user.UserName)
+  //      .subscribe(vendors => {
+  //         user.Id = users[0].UserName; //how to cast in ts
+  //          console.log(user);
+
+  //        });
+  //       }
+  //     }
 }
