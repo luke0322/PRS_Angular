@@ -1,3 +1,53 @@
-<p>
-  purchaserequest-list works!
-</p>
+<app-menu></app-menu>
+<div class ="component-content">
+	<div class =''>
+		<div class ='lefthalf'>
+			<span class ='component-title'>{{title}}</span>
+			<span><a routerLink ='/purchaseRequest/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
+		</div>
+
+	<div class='righthalf input-group'>
+		<span class =''>Sort: </span>
+		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left'>
+			<option *ngFor='let sortKey of sortKeys' value = '{{sortKey}}'>{{sortKey}}</option>
+		</select>
+		<span>Order:</span>
+			<select [(ngModel)] = 'sortDesc' class ='custom-select text-sm-left'>
+				<option value = 'asc'>Asc</option>
+				<option value='desc'>Desc</option>
+			</select>
+		</div>
+	</div>
+<p *ngIf= '!purchaseRequests'>loading ... </p>
+<table class = "table table-sm" *ngIf='purchaseRequests'>
+
+<tr>
+	<th>ID</th>
+	<th>Description</th>
+	<th>Justification</th>
+	<th>DateNeeded</th>
+	<th>DeliveryMode</th>
+	<th>StatusID</th>
+	<th>Total</th>
+	<th>SubmittedDate</th>
+	<th>User</th>
+
+
+</tr> 
+<tr *ngFor='let purchaseRequest of purchaseRequests | sort:selectedSortKey:sortDesc'>
+		<td>{{purchaseRequest.Id}}</td> 
+		<td>{{purchaseRequest.Description}}</td> 
+		<td>{{purchaseRequest.Justification}}</td>
+		<td>{{purchaseRequest.DateNeeded}}</td>
+		<td>{{purchaseRequest.DeliveryMode}}</td>
+		<td>{{purchaseRequest.StatusID}}</td>
+		<td>{{purchaseRequest.Total}}</td>
+		<td>{{purchaseRequest.SubmittedDate}}</td> 
+		<td>{{purchaseRequest.User}}</td>  
+
+		<td class = 'actions'>
+			<a routerLink = '/purchaseRequest/detail/{{purchaseRequest.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
+			<a routerLink = '/purchaseRequest/edit/{{purchaseRequest.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
+		</td>
+</tr>
+</table>

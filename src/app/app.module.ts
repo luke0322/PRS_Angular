@@ -7,6 +7,7 @@ import { UserService} from './service/user.service';
 import { VendorService } from './service/vendor.service';
 import { ProductService } from './service/product.service';
 import { StatusService } from './service/status.service';
+import { PurchaserequestService } from './service/purchaserequest.service';
 import { AppComponent } from './app.component';
 import { SortPipe } from './util/sort-pipe';
 
@@ -72,7 +73,8 @@ import { PurchaserequestEditComponent } from './feature/purchaserequest/purchase
  	UserService,
   VendorService,
   ProductService,
-  StatusService], //we put our services here
+  StatusService,
+  PurchaserequestService], //we put our services here
   bootstrap: [AppComponent]
 })
 export class AppModule { }
