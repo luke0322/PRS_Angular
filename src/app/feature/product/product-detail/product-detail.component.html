@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<div class = "formatcomps">
+		<div class ='lefthalf'>
+			<span class ='component-title'>{{title}}</span>
+		</div>
+		<div class ='righthalf'>
+			<span><a routerLink = '/product/list'>Back to list</a></span>
+		</div>
+<table *ngIf='product' class = 'table table-sm'>
+		<tr>
+			<th>ID</th>
+			<td>{{product.Id}}</td>
+		</tr>
+		<tr>
+			<th>Part Number</th>
+			<td>{{product.PartNumber}}</td>
+		</tr>
+
+		<tr>
+			<th>Name</th>
+			<td>{{product.Name}}</td>
+		</tr>
+
+		<tr>
+			<th>Price</th>
+			<td>{{product.Price}}</td>
+		</tr>
+
+		<tr>
+			<th>Unit</th>
+			<td>{{product.Unit}}</td>
+		</tr>
+
+		<tr>
+			<th>Photo Path</th>
+			<td>{{product.PhotoPath}}</td>
+		</tr>
+
+  <tr><td colspan ="2">
+	<a routerLink='/product/edit/{{product.Id}}' class = 'btn btn-primary' title = 'Edit'>Edit</a>
+	<button (click)= "delete()" style = "margin-left: 46px;" class = "btn btn-danger" title = "Delete">Delete</button>
+  </td></tr>
+</table>
+</div>
