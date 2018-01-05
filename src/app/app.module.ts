@@ -40,6 +40,10 @@ import { PurchaserequestCreateComponent } from './feature/purchaserequest/purcha
 import { PurchaserequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { StatusDetailComponent } from './feature/status/status-detail/status-detail.component';
+import { LineitemListComponent } from './feature/lineitem/lineitem-list/lineitem-list.component';
+import { LineitemDetailComponent } from './feature/lineitem/lineitem-detail/lineitem-detail.component';
+import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './feature/lineitem/lineitem-edit/lineitem-edit.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { StatusDetailComponent } from './feature/status/status-detail/status-det
     PurchaserequestCreateComponent,
     PurchaserequestEditComponent,
     UserLoginComponent,
-    StatusDetailComponent
+    StatusDetailComponent,
+    LineitemListComponent,
+    LineitemDetailComponent,
+    LineitemCreateComponent,
+    LineitemEditComponent
   ],
   imports: [
     BrowserModule,

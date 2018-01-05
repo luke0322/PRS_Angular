@@ -9,12 +9,12 @@
 
 <p *ngIf='!purchaserequest'>Loading... </p>
 
-	<div *ngIf='purchaserequest'>
+<div *ngIf='purchaserequest'>
 		<div class = 'form-group row'>
-				<label class = 'col-form-label col-sm-4' for="purchaserequestvendor">Vendor:</label>
+				<label class = 'col-form-label col-sm-4' for="purchaserequestvendor">User:</label>
 			<div class = 'col-sm-4 select-list'>
-				<select [(ngModel)]= 'purchaserequest.Vendor' class='form-control' name='Vendor' id='purchaserequest-Vendor'>
-					<option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]='vendor.Id == purchaserequest.Vendor.Id'>{{vendor.Name}}</option>
+				<select [(ngModel)]= 'purchaserequest.User.Id' class='form-control' name='Vendor' id='purchaserequest-Vendor'>
+					<option *ngFor="let user of users" [ngValue]="user.UserName" [selected]='user.UserName == purchaserequest.User.UserName'>{{user.UserName}}</option>
 				</select>
 			</div>
 		</div>
@@ -36,7 +36,6 @@
 
 				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Date Needed:</label>
 				<input [(ngModel)]='purchaserequest.DateNeeded' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Date Needed">
-				<small id="emailHelp" class="form-text text-muted col-sm-2">Price</small>
 			</div>
 
 			<div class ='form-group row'>
@@ -59,15 +58,15 @@
 
 			</div>
 
-			<div class ='form-group row'>
+<!-- 			<div class ='form-group row'>
 
 				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Submitted Date:</label>
 				<input [(ngModel)]='purchaserequest.SubmittedDate' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Submitted Date">
 
-			</div>
+			</div> -->
 
 
-		<div class ='form-group'>
+	<div class ='form-group'>
 		<button (click)='add()' class="btn btn-primary">Create</button>
-		</div>
 	</div>
+</div>

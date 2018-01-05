@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PurchaserequestService} from '../../../service/purchaserequest.service';
 import { PurchaseRequest } from '../../../model/purchaserequest';
+import { UserService} from '../../../service/user.service';
+import { User } from '../../../model/user';
+import { SystemService} from '../../../service/system.service';
 
 @Component({
   selector: 'app-purchaserequest-create',
@@ -16,6 +19,7 @@ export class PurchaserequestCreateComponent implements OnInit {
   resp: any;
 
   purchaserequest: PurchaseRequest = new PurchaseRequest(0,'','','',0,0);
+  user: User = new User();
 
   add(){
      console.log("this.purchaserequest", this.purchaserequest);
@@ -28,9 +32,12 @@ export class PurchaserequestCreateComponent implements OnInit {
    }
   constructor(private PurchaserequestSvc: PurchaserequestService,
   			  private router: Router,
-  			  private route: ActivatedRoute) { }
+  			  private route: ActivatedRoute,
+          private SysSvc: SystemService,
+          private UserSvc: UserService) { }
 
   ngOnInit() {
+         this.UserSvc.list();
   }
 
 }
