@@ -19,8 +19,8 @@
 		</div>
 	</div>
 <p *ngIf= '!products'>loading ... </p>
-<table class = "table table-sm" *ngIf='products'>
-
+<table class = "table table-sm table-striped" *ngIf='products'>
+<thead class="table-inverse">
 <tr>
 	<th>ID</th>
 	<th>Unit</th>
@@ -31,7 +31,8 @@
 	<th>Vendor</th>
 	<th>Actions</th>
 
-</tr> 
+</tr>
+</thead> 
 <tr *ngFor='let product of products | sort:selectedSortKey:sortDesc'>
 		<td>{{product.Id}}</td> 
 		<td>{{product.Unit}}</td> 

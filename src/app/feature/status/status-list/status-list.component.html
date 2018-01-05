@@ -18,14 +18,14 @@
 		</div>
 	</div>
 <p *ngIf= '!status'>loading ... </p>
-<table class = "table table-sm" *ngIf='status'>
-
+<table class = "table table-sm table-striped" *ngIf='status'>
+<thead class="table-inverse">
 	<tr>
 		<th>ID</th>
 		<th>Description</th>
 		<th>Action</th>
 	</tr> 
-
+</thead>
 	<tr *ngFor='let status of status | sort:selectedSortKey:sortDesc'>
 		<td>{{status.Id}}</td> 
 		<td>{{status.Description}}</td> 

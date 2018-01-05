@@ -19,8 +19,8 @@
 		</div>
 	</div>
 <p *ngIf= '!purchaseRequests'>loading ... </p>
-<table class = "table table-sm" *ngIf='purchaseRequests'>
-
+<table class = "table table-sm table-striped" *ngIf='purchaseRequests'>
+<thead class="table-inverse">
 <tr>
 	<th>ID</th>
 	<th>Description</th>
@@ -34,7 +34,8 @@
 	<th>Actions</th>
 
 
-</tr> 
+</tr>
+</thead> 
 <tr *ngFor='let purchaseRequest of purchaseRequests | sort:selectedSortKey:sortDesc'>
 		<td>{{purchaseRequest.Id}}</td> 
 		<td>{{purchaseRequest.Description}}</td> 

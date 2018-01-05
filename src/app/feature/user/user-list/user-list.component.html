@@ -19,19 +19,20 @@
 		</div>
 	</div>
 <p *ngIf= '!users'>loading ... </p>
-<table class = "table table-sm" *ngIf='users'>
+<table class = "table table-sm table-striped" *ngIf='users'>
+	<thead class ='table-inverse'>
+		<tr>
+			<th>ID</th>
+			<th>UserName</th>
+			<th>Password</th>
+			<th>Name</th>
+			<th>PhoneNumber</th>
+			<th>Email</th>
+			<th>Priv</th>
+			<th>Actions</th>
 
-<tr>
-	<th>ID</th>
-	<th>UserName</th>
-	<th>Password</th>
-	<th>Name</th>
-	<th>PhoneNumber</th>
-	<th>Email</th>
-	<th>Priv</th>
-	<th>Actions</th>
-
-</tr> 
+		</tr> 
+	</thead>
 	<tr *ngFor='let user of users | sort:selectedSortKey:sortDesc'>
 
 		<td>{{user.Id}}</td> 

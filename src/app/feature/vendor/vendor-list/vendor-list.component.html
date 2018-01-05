@@ -19,37 +19,38 @@
 		</div>
 	</div>
 <p *ngIf= '!vendors'>loading ... </p>
-<table class = "table table-sm" *ngIf='vendors'>
+<table class = "table table-sm table-striped" *ngIf='vendors'>
+	<thead class = "thead-inverse">
+		<tr>
+			<th>ID</th>
+			<th>Code</th>
+			<th>Name</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Zip</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Preapproved</th>
+			<th>Actions</th>
 
-<tr>
-	<th>ID</th>
-	<th>Code</th>
-	<th>Name</th>
-	<th>Address</th>
-	<th>City</th>
-	<th>State</th>
-	<th>Zip</th>
-	<th>Phone</th>
-	<th>Email</th>
-	<th>Preapproved</th>
-	<th>Actions</th>
+		</tr>
+	</thead> 
+		<tr *ngFor='let vendor of vendors | sort:selectedSortKey:sortDesc'>
 
-</tr> 
-	<tr *ngFor='let vendor of vendors | sort:selectedSortKey:sortDesc'>
-
-		<td>{{vendor.Id}}</td> 
-		<td>{{vendor.Code}}</td>
-		<td>{{vendor.Name}}</td>
-		<td>{{vendor.Address}}</td>
-		<td>{{vendor.City}}</td>
-		<td>{{vendor.State}}</td>
-		<td>{{vendor.Zip}}</td>
-		<td>{{vendor.Phone}}</td>
-		<td>{{vendor.Email}}</td> <!--not served up -->
-		<td>{{vendor.Preapproved}}</td>
-		<td class = 'actions'>
-			<a routerLink = '/vendor/detail/{{vendor.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
-			<a routerLink = '/vendor/edit/{{vendor.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
-		</td>
-	</tr>
+			<td>{{vendor.Id}}</td> 
+			<td>{{vendor.Code}}</td>
+			<td>{{vendor.Name}}</td>
+			<td>{{vendor.Address}}</td>
+			<td>{{vendor.City}}</td>
+			<td>{{vendor.State}}</td>
+			<td>{{vendor.Zip}}</td>
+			<td>{{vendor.Phone}}</td>
+			<td>{{vendor.Email}}</td> <!--not served up -->
+			<td>{{vendor.Preapproved}}</td>
+			<td class = 'actions'>
+				<a routerLink = '/vendor/detail/{{vendor.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
+				<a routerLink = '/vendor/edit/{{vendor.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
+			</td>
+		</tr>
 </table>

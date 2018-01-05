@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 .component-content{
-
+ margin-left: 6px;
+ margin-right: 6px;
+ text-align: center;
+ 
 }
 .lefthalf{
 	display: inline-block;
