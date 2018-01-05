@@ -23,10 +23,16 @@
 	<tr>
 		<th>ID</th>
 		<th>Description</th>
+		<th>Action</th>
 	</tr> 
 
 	<tr *ngFor='let status of status | sort:selectedSortKey:sortDesc'>
 		<td>{{status.Id}}</td> 
-		<td>{{status.Description}}</td>  
+		<td>{{status.Description}}</td> 
+		<td class = 'actions'>
+			<a routerLink = '/status/detail/{{status.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
+
+		</td> 
 	</tr>
+
 </table>

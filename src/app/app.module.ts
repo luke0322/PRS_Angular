@@ -39,6 +39,7 @@ import { PurchaserequestDetailComponent } from './feature/purchaserequest/purcha
 import { PurchaserequestCreateComponent } from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
 import { PurchaserequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { StatusDetailComponent } from './feature/status/status-detail/status-detail.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
     PurchaserequestDetailComponent,
     PurchaserequestCreateComponent,
     PurchaserequestEditComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    StatusDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<app-menu></app-menu>
+<div class = "formatcomps">
+		<div class ='lefthalf'>
+			<span class ='component-title'>{{title}}</span>
+		</div>
+		<div class ='righthalf'>
+			<span><a routerLink = '/status'>Back to status list</a></span>
+		</div>
+<table *ngIf='status' class = 'table table-sm'>
+		<tr>
+			<th>ID</th>
+			<td>{{status.Id}}</td>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td>{{status.Description}}</td>
+		</tr>
+</table>
+</div>

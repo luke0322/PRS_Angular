@@ -9,7 +9,7 @@ import { PurchaseRequest } from '../../../model/PurchaseRequest';
   styleUrls: ['./purchaserequest-detail.component.css']
 })
 export class PurchaserequestDetailComponent implements OnInit {
-  title: string = "PurchaseRequest Detail";
+  title: string = "Purchase Request Detail";
 
   id: string;
   resp: any;

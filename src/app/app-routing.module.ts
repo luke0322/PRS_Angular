@@ -24,8 +24,11 @@ import { PurchaserequestCreateComponent } from './feature/purchaserequest/purcha
 
 import { AboutComponent } from './core/about/about.component';
 import { StatusListComponent } from './feature/status/status-list/status-list.component';
+import { StatusDetailComponent } from './feature/status/status-detail/status-detail.component';
 
 const routes: Routes =[
+// {path: '', redirectTo: 'user/login',pathMatch: 'full'},
+{path: '', redirectTo: 'purchaserequest/list',pathMatch: 'full'}, //first path if empty
 {path: 'about', component: AboutComponent},
 {path: 'user/detail/:id', component: UserDetailComponent},
 {path: 'user/edit/:id', component: UserEditComponent},
@@ -48,7 +51,8 @@ const routes: Routes =[
 {path: 'purchaserequest/create', component: PurchaserequestCreateComponent},
 {path: 'purchaserequest/list', component: PurchaserequestListComponent},
 
-{path: 'status', component: StatusListComponent}
+{path: 'status', component: StatusListComponent},
+{path: 'status/detail/:id', component: StatusDetailComponent}
 ];
 
 @NgModule({

@@ -19,10 +19,10 @@ export class StatusService {
 	}
 
 
-	// get(id): Observable<Product[]>{
-	// 	//console.log(id); //we need a json object returned
-	// 	return this.http.get(url +"Get?id=" + id) as Observable<Product[]>;
-	// }
+	get(id): Observable<Status[]>{
+		//console.log(id); //we need a json object returned
+		return this.http.get(url +"Get?id=" + id) as Observable<Status[]>;
+	}
 
 	// add(product: Product){
 	// 	return this.http.post(url + "Add", product) as Observable<any>;

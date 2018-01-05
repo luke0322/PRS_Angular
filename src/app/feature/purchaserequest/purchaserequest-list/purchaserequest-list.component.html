@@ -3,7 +3,7 @@
 	<div class =''>
 		<div class ='lefthalf'>
 			<span class ='component-title'>{{title}}</span>
-			<span><a routerLink ='/purchaseRequest/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
+			<span><a routerLink ='/purchaserequest/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
 		</div>
 
 	<div class='righthalf input-group'>
@@ -30,7 +30,8 @@
 	<th>StatusID</th>
 	<th>Total</th>
 	<th>SubmittedDate</th>
-	<th>User</th>
+	<th>UserID</th>
+	<th>Actions</th>
 
 
 </tr> 
@@ -46,8 +47,8 @@
 		<td>{{purchaseRequest.User}}</td>  
 
 		<td class = 'actions'>
-			<a routerLink = '/purchaseRequest/detail/{{purchaseRequest.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
-			<a routerLink = '/purchaseRequest/edit/{{purchaseRequest.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
+			<a routerLink = '/purchaserequest/detail/{{purchaseRequest.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
+			<a routerLink = '/purchaserequest/edit/{{purchaseRequest.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
 		</td>
 </tr>
 </table>

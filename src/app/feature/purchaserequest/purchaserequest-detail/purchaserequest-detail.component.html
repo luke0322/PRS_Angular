@@ -1,3 +1,54 @@
-<p>
-  purchaserequest-detail works!
-</p>
+<app-menu></app-menu>
+<div class = "formatcomps">
+		<div class ='lefthalf'>
+			<span class ='component-title'>{{title}}</span>
+		</div>
+		<div class ='righthalf'>
+			<span><a routerLink = '/purchaserequest/list'>Back to list</a></span>
+		</div>
+<table *ngIf='purchaserequest' class = 'table table-sm'>
+		<tr>
+			<th>Purchase Request ID</th>
+			<td>{{purchaserequest.Id}}</td>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td>{{purchaserequest.Description}}</td>
+		</tr>
+
+		<tr>
+			<th>Date Needed</th>
+			<td>{{purchaserequest.DateNeeded}}</td>
+		</tr>
+
+		<tr>
+			<th>Delivery Mode</th>
+			<td>{{purchaserequest.DeliveryMode}}</td>
+		</tr>
+
+		<tr>
+			<th>StatusID</th>
+			<td>{{purchaserequest.StatusID}}</td>
+		</tr>
+
+		<tr>
+			<th>Total</th>
+			<td>{{purchaserequest.Total}}</td>
+		</tr>
+
+		<tr>
+			<th>Submitted Date</th>
+			<td>{{purchaserequest.SubmittedDate}}</td>
+		</tr>
+
+		<tr>
+			<th>UserID</th>
+			<td>{{purchaserequest.User}}</td>
+		</tr>
+
+  <tr><td colspan ="2">
+	<a routerLink='/purchaserequest/edit/{{purchaserequest.Id}}' class = 'btn btn-primary' title = 'Edit'>Edit</a>
+	<button (click)= "delete()" style = "margin-left: 46px;" class = "btn btn-danger" title = "Delete">Delete</button>
+  </td></tr>
+</table>
+</div>
