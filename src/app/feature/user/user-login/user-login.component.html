@@ -1,23 +1,18 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <div class ="loginformat">
-	<div class ='form-group row' style="margin-left: 120px; text-align: center; margin-top: 20px;">
-
-		<label class = 'col-form-label col-sm-2' for='username'>Username:</label>
+	<div class = "form-group">
+		<label class = 'col-form-label col-sm-2 ' for='username'></label>
 		<input [(ngModel)]='user.UserName' name = 'Username' type ='text' class = 'form-control col-sm-4' id ='username' aria-describedby="emailHelp" placeholder="Username">
-		<small id="emailHelp" class="form-text text-muted col-sm-2"></small>
-
+	</div>	
+	<div class="form-group">
+		<label class = 'col-form-label col-sm-2' for='pw'></label>
+		<input [(ngModel)]='user.Password' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='pw' aria-describedby="emailHelp" placeholder="Password">
 	</div>
-	<div class ='form-group row' style="margin-left: 120px; text-align: center;">
-
-		<label class = 'col-form-label col-sm-2' for='userfirstname'>Password:</label>
-		<input [(ngModel)]='user.Password' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='userfirstname' aria-describedby="emailHelp" placeholder="Password">
-		<small id="emailHelp" class="form-text text-muted col-sm-2"></small>
-
+	<div class ="form-group">
+		<span><button (click)='login()' class="btn btn-primary">Login</button></span> 
 	</div>
-	<div class ="form-group" style="margin-right: 180px; text-align: center;">
-		<button (click)='login()' class="btn btn-primary">Login</button> 
-
-	</div>
-	<div class="form-group" style="margin-left: 120px; text-align: center;">
+	<div class="form-group">
 		<span>{{this.message}}</span>
 	</div>
 </div>
