@@ -1,3 +1,73 @@
-<p>
-  purchaserequest-create works!
-</p>
+<app-menu></app-menu>
+<div class ='lefthalf' style ="margin-left: 6px;">
+	<span class ='component-title'>{{title}}</span>
+</div>
+
+<div class ='righthalf'>
+			<span><a routerLink = '/purchaserequest/list'>Back to list</a></span>
+</div>
+
+<p *ngIf='!purchaserequest'>Loading... </p>
+
+	<div *ngIf='purchaserequest'>
+		<div class = 'form-group row'>
+				<label class = 'col-form-label col-sm-4' for="purchaserequestvendor">Vendor:</label>
+			<div class = 'col-sm-4 select-list'>
+				<select [(ngModel)]= 'purchaserequest.Vendor' class='form-control' name='Vendor' id='purchaserequest-Vendor'>
+					<option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]='vendor.Id == purchaserequest.Vendor.Id'>{{vendor.Name}}</option>
+				</select>
+			</div>
+		</div>
+
+			<div class ='form-group row'>
+
+				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Description:</label>
+				<input [(ngModel)]='purchaserequest.Description' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Description">
+
+			</div>
+
+			<div class ='form-group row'>
+
+				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Justification:</label>
+				<input [(ngModel)]='purchaserequest.Justification' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Justification">
+			</div>
+
+			<div class ='form-group row'>
+
+				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Date Needed:</label>
+				<input [(ngModel)]='purchaserequest.DateNeeded' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Date Needed">
+				<small id="emailHelp" class="form-text text-muted col-sm-2">Price</small>
+			</div>
+
+			<div class ='form-group row'>
+
+				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Delivery Mode:</label>
+				<input [(ngModel)]='purchaserequest.DeliveryMode' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="DeliveryMode">
+			</div>
+
+			<div class ='form-group row'>
+
+				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Status ID:</label>
+				<input [(ngModel)]='purchaserequest.StatusID' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="photo path">
+
+			</div>
+
+			<div class ='form-group row'>
+
+				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Total:</label>
+				<input [(ngModel)]='purchaserequest.Total' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="photo path">
+
+			</div>
+
+			<div class ='form-group row'>
+
+				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Submitted Date:</label>
+				<input [(ngModel)]='purchaserequest.SubmittedDate' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Submitted Date">
+
+			</div>
+
+
+		<div class ='form-group'>
+		<button (click)='add()' class="btn btn-primary">Create</button>
+		</div>
+	</div>

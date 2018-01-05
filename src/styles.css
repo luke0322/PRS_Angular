@@ -2,24 +2,25 @@
 .component-content{
  margin-left: 6px;
  margin-right: 6px;
- text-align: center;
  
+}
+.component-title{
+	font-size: 25px;
+	font-weight: bold;
 }
 .lefthalf{
 	display: inline-block;
 	width: 49%;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-left: 5px;
 }
 .righthalf{
-	display: inline-block;
+	/*display: inline-block;*/
 	width: 49%;
-	text-align: right;
+	float: right;
 	margin-top: 5px;
 	margin-bottom: 5px;
-}
-.formatcomps{
-
 }
 
 .select-list{

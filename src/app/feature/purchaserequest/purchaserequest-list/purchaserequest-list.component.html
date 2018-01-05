@@ -1,6 +1,5 @@
 <app-menu></app-menu>
-<div class ="component-content">
-	<div class =''>
+	<div class ='component-content'>
 		<div class ='lefthalf'>
 			<span class ='component-title'>{{title}}</span>
 			<span><a routerLink ='/purchaserequest/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
@@ -8,16 +7,17 @@
 
 	<div class='righthalf input-group'>
 		<span class =''>Sort: </span>
-		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left'>
+		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left' width ='20' height = '20'>
 			<option *ngFor='let sortKey of sortKeys' value = '{{sortKey}}'>{{sortKey}}</option>
 		</select>
 		<span>Order:</span>
 			<select [(ngModel)] = 'sortDesc' class ='custom-select text-sm-left'>
 				<option value = 'asc'>Asc</option>
-				<option value='desc'>Desc</option>
+				<option value ='desc'>Desc</option>
 			</select>
 		</div>
 	</div>
+<div class ="component-content">
 <p *ngIf= '!purchaseRequests'>loading ... </p>
 <table class = "table table-sm table-striped" *ngIf='purchaseRequests'>
 <thead class="table-inverse">
@@ -50,6 +50,9 @@
 		<td class = 'actions'>
 			<a routerLink = '/purchaserequest/detail/{{purchaseRequest.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
 			<a routerLink = '/purchaserequest/edit/{{purchaseRequest.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
+			<a routerLink = ''><img src = 'assets/lines.png' title = 'Line Item'></a>
+			<!-- <a routerLink = '/purchaserequestlineitem/list/{{purchaserequestlineitem.Id}}'> -->
 		</td>
 </tr>
 </table>
+</div>
