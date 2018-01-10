@@ -19,8 +19,8 @@
 		</div>
 	</div>
 <p *ngIf= '!users'>loading ... </p>
-<table class = "table table-sm" *ngIf='users'>
-
+<table class = "table table-sm table-striped table-bordered" *ngIf='users'>
+<thead class ='table-inverse'>
 <tr>
 	<th>ID</th>
 	<th>UserName</th>
@@ -32,6 +32,7 @@
 	<th>Actions</th>
 
 </tr> 
+</thead>
 	<tr *ngFor='let user of users | sort:selectedSortKey:sortDesc'>
 
 		<td>{{user.Id}}</td> 

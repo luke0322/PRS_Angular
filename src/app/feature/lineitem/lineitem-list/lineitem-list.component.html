@@ -1,3 +1,47 @@
-<p>
-  lineitem-list works!
-</p>
+<app-menu></app-menu>
+	<div class ='component-content'>
+		<div class ='lefthalf'>
+			<span class ='component-title'>{{title}}</span>
+			<span><a routerLink ='/lineitem/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
+		</div>
+
+	<div class='righthalf input-group'>
+		<span class =''>Sort: </span>
+		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left' width ='20' height = '20'>
+			<option *ngFor='let sortKey of sortKeys' value = '{{sortKey}}'>{{sortKey}}</option>
+		</select>
+		<span>Order:</span>
+			<select [(ngModel)] = 'sortDesc' class ='custom-select text-sm-left'>
+				<option value = 'asc'>Asc</option>
+				<option value ='desc'>Desc</option>
+			</select>
+		</div>
+	</div>
+<div class ="component-content">
+<p *ngIf= '!lineitems'>loading ... </p>
+<table class = "table table-sm table-striped table-bordered" *ngIf='lineitems'>
+<thead class="table-inverse">
+<tr>
+	<th>ID</th>
+	<th>Purchase Request</th>
+	<th>ProductID</th>
+	<th>Quantity</th>
+	<th>Actions</th>
+
+
+</tr>
+</thead> 
+<tr *ngFor='let lineitem of lineitems | sort:selectedSortKey:sortDesc'>
+		<td>{{lineitem.Id}}</td> 
+		<td>{{lineitem.PurchaseRequestID}}</td> 
+		<td>{{lineitem.ProductID}}</td>
+		<td>{{lineitem.Quantity}}</td> 
+
+		<td class = 'actions'>
+			<a routerLink = '/lineitem/detail/{{lineitem.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
+			<a routerLink = '/lineitem/edit/{{lineitem.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
+			<!-- <a routerLink = '/purchaserequestlineitem/list/{{purchaserequestlineitem.Id}}'> -->
+		</td>
+</tr>
+</table>
+</div>

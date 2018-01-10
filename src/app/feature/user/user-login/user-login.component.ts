@@ -11,7 +11,6 @@ import { SystemService} from '../../../service/system.service';
 })
 export class UserLoginComponent implements OnInit {
 
-
 	message: string = '';
 	user: User = new User(0,'','','','','','',false,false,false,null);
 
@@ -36,6 +35,7 @@ export class UserLoginComponent implements OnInit {
   			  private router: Router) { }
 
   ngOnInit() {
+  	
   }
 
 }

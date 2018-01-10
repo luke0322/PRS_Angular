@@ -22,6 +22,11 @@ import { PurchaserequestDetailComponent } from './feature/purchaserequest/purcha
 import { PurchaserequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
 import { PurchaserequestCreateComponent } from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
 
+import { LineitemListComponent } from './feature/lineitem/lineitem-list/lineitem-list.component';
+import { LineitemDetailComponent } from './feature/lineitem/lineitem-detail/lineitem-detail.component';
+import { LineitemEditComponent } from './feature/lineitem/lineitem-edit/lineitem-edit.component';
+import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
+
 import { AboutComponent } from './core/about/about.component';
 import { StatusListComponent } from './feature/status/status-list/status-list.component';
 import { StatusDetailComponent } from './feature/status/status-detail/status-detail.component';
@@ -50,6 +55,11 @@ const routes: Routes =[
 {path: 'purchaserequest/edit/:id', component: PurchaserequestEditComponent},
 {path: 'purchaserequest/create', component: PurchaserequestCreateComponent},
 {path: 'purchaserequest/list', component: PurchaserequestListComponent},
+
+{path: 'lineitem/detail/:id', component: LineitemDetailComponent},
+{path: 'lineitem/edit/:id', component: LineitemEditComponent},
+{path: 'lineitem/create', component: LineitemCreateComponent},
+{path: 'lineitem/list', component: LineitemListComponent},
 
 {path: 'status', component: StatusListComponent},
 {path: 'status/detail/:id', component: StatusDetailComponent}
