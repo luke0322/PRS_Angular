@@ -6,7 +6,7 @@ export class PurchaseRequest{
 	Justification: string;
 	DateNeeded: Date;
 	DeliveryMode: string;
-	Status: Status;
+	StatusID: Status;
 	Total: number;
 	SubmittedDate: Date;
 	User: User;
@@ -14,16 +14,16 @@ export class PurchaseRequest{
 		console.log(this);
 	}
 
-	static sortableKeys = ['Id','Justification','DeliveryMode','DateNeeded','Description','Status', 'Total', 'SubmittedDate', 'User'];
+	static sortableKeys = ['Id','Justification','DeliveryMode','DateNeeded','Description','StatusID', 'Total', 'SubmittedDate', 'User'];
 
 	constructor(Id: number = 0, Description: string = '',Justification: string = '', DeliveryMode: string = '',
-		Status:Status = null,Total: number = 0, User:User = null){
+		StatusID:Status = null,Total: number = 0, User:User = null){
 		this.Id = Id;
 		this.Description = Description;
 		this.Justification = Justification;
 		// this.DateNeeded = DateNeeded;
 		this.DeliveryMode = DeliveryMode;
-		this.Status = Status;
+		this.StatusID = StatusID;
 		this.Total = Total; //do not need id when creating a new entry 
 		//this.SubmittedDate = SubmittedDate;
 		this.User = User;
