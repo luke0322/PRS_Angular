@@ -9,15 +9,15 @@ export class PurchaseRequest{
 	StatusID: Status;
 	Total: number;
 	SubmittedDate: Date;
-	User: User;
+	UserID: number;
 	display(): void {
 		console.log(this);
 	}
 
-	static sortableKeys = ['Id','Justification','DeliveryMode','DateNeeded','Description','StatusID', 'Total', 'SubmittedDate', 'User'];
+	static sortableKeys = ['Id','Justification','DeliveryMode','DateNeeded','Description','StatusID', 'Total', 'SubmittedDate', 'UserID'];
 
 	constructor(Id: number = 0, Description: string = '',Justification: string = '', DeliveryMode: string = '',
-		StatusID:Status = null,Total: number = 0, User:User = null){
+		StatusID:Status = null,Total: number = 0, UserID:number = 0){
 		this.Id = Id;
 		this.Description = Description;
 		this.Justification = Justification;
@@ -26,6 +26,6 @@ export class PurchaseRequest{
 		this.StatusID = StatusID;
 		this.Total = Total; //do not need id when creating a new entry 
 		//this.SubmittedDate = SubmittedDate;
-		this.User = User;
+		this.UserID = UserID;
 	}
 }

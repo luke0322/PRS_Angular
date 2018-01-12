@@ -19,7 +19,7 @@ export class PurchaserequestCreateComponent implements OnInit {
   resp: any;
 
   purchaserequest: PurchaseRequest = new PurchaseRequest();
-  users: User[];
+  //user: User[];
 
   add(){
      console.log("this.purchaserequest", this.purchaserequest);
@@ -36,10 +36,10 @@ export class PurchaserequestCreateComponent implements OnInit {
           private UserSvc: UserService) { }
 
   ngOnInit() {
-    this.UserSvc.list()
-      .subscribe(users => this.users = users);
+    // this.UserSvc.list()
+    //   .subscribe(users => this.user = users);
     if(this.SysSvc.data.user.loggedIn) {
-      this.purchaserequest.User = this.SysSvc.data.user.instance;
+      this.purchaserequest.UserID = this.SysSvc.data.user.instance.Id;
     } else {
       console.error("User not logged in.");
     }
