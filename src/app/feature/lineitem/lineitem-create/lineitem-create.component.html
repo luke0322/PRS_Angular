@@ -10,22 +10,16 @@
 <p *ngIf='!lineitem'>Loading... </p>
 
 <div *ngIf='lineitem' style = "margin-left: 30px;">
-<!-- 	<div class ='form-group row'>
-
-		<label class = 'col-form-label col-sm-2' for='username'>Id:</label>
-		<input [(ngModel)]='lineitem.Id' name = 'Username' type ='text' class = 'form-control col-sm-4' id ='username' aria-describedby="emailHelp" placeholder="Username">
-
-	</div> -->
 	<div class ='form-group row'>
 
 		<label class = 'col-form-label col-sm-2' for='userfirstname'>PurchaseRequestID:</label>
-		<input [(ngModel)]='lineitem.PurchaseRequestID.Id' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='userfirstname' aria-describedby="emailHelp" placeholder="First Name">
+		<input [(ngModel)]='lineitem.PurchaseRequestID' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='userfirstname' aria-describedby="emailHelp" placeholder="First Name">
 
 	</div>
 	<div class ='form-group row'>
 
 		<label class = 'col-form-label col-sm-2' for='userlastname'>ProductID:</label>
-		<input [(ngModel)]='lineitem.ProductID.Id' name = 'Lastname' type ='text' class = 'form-control col-sm-4' id ='userlastname' aria-describedby="emailHelp" placeholder="Last Name">
+		<input [(ngModel)]='lineitem.ProductID' name = 'Lastname' type ='text' class = 'form-control col-sm-4' id ='userlastname' aria-describedby="emailHelp" placeholder="Last Name">
 
 	</div>
 	<div class ='form-group row'>

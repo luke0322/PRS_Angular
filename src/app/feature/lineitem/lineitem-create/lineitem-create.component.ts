@@ -18,14 +18,14 @@ export class LineitemCreateComponent implements OnInit {
 
   add(){
      console.log("this.lineitem", this.lineitem);
-   	 this.UserSvc.add(this.lineitem)
+   	 this.LineItemSvc.add(this.lineitem)
    		.subscribe(resp =>{
    			this.resp = resp;
   			console.log("Line Item Add:", this.resp);
   			this.router.navigate(['/lineitem/list']);
    		});
    }
-  constructor(private UserSvc: LineItemService,
+  constructor(private LineItemSvc: LineItemService,
   			  private router: Router,
   			  private route: ActivatedRoute) { }
 

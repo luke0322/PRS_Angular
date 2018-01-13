@@ -21,7 +21,6 @@ export class PurchaseRequest{
 		this.Id = Id;
 		this.Description = Description;
 		this.Justification = Justification;
-		// this.DateNeeded = DateNeeded;
 		this.DeliveryMode = DeliveryMode;
 		this.StatusID = StatusID;
 		this.Total = Total; //do not need id when creating a new entry 
