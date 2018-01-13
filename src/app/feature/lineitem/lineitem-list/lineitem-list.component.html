@@ -12,7 +12,8 @@
 <div class ="component-content">
 	<p *ngIf= '!lineitems'>loading ... </p>
 
-		<table class = "table table-sm table-striped table-bordered" *ngIf='purchaserequest'>
+		<table class = "table table-sm table-striped table-bordered" 
+		*ngIf='purchaserequest'>
 		<thead class="table-inverse">
 		<tr>
 			<th>ID</th>
@@ -30,7 +31,8 @@
 		</tr>
 		</table>
 
-		<table class = "table table-sm table-striped table-bordered" *ngIf='lineitems'>
+		<table class = "table table-sm table-striped table-bordered" 
+		*ngIf='lineExist'>
 		<thead class="table-inverse">
 			<tr>
 				<th>ID</th>

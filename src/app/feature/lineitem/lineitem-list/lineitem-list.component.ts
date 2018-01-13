@@ -16,6 +16,7 @@ export class LineitemListComponent implements OnInit {
   sortDesc: string = 'asc';
   sortKeys: string[] = LineItem.sortableKeys;
   lineitems: LineItem[];
+  lineExist: boolean;
   id: number;
 
   purchaserequest:PurchaseRequest;
@@ -31,6 +32,9 @@ export class LineitemListComponent implements OnInit {
   	this.LineitemSvc.lines(this.id)
   	.subscribe(lineitems=> {
   		this.lineitems = lineitems;
+      if(lineitems.length > 0){
+        this.lineExist = true;
+      }
       console.log(lineitems);
   	});
     this.PurchaseRequestSvc.get(this.id)
