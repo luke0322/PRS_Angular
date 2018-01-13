@@ -21,6 +21,7 @@ export class LineitemEditComponent implements OnInit {
   id: string;
   resp: any;
   prod: Product;
+  products: Product[];
 
   lineitem: LineItem; //used for dropdown box
 
@@ -56,5 +57,11 @@ export class LineitemEditComponent implements OnInit {
          this.lineitem = lineitems.length > 0 ? lineitems[0]: null;
          console.log(this.lineitem);
        });
+    this.ProductSvc.list()
+    .subscribe(products=> {
+      this.products = products;
+
+      console.log(products);
+    });
   }
 }

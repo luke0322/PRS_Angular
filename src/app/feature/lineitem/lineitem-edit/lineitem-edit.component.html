@@ -9,35 +9,25 @@
 
 <p *ngIf='!lineitem'>Loading... </p>
 
-	<div *ngIf='lineitem'>
+	<div *ngIf='lineitem' style = "margin-left: 30px;">
 
-			<div class ='form-group row'>
+	<div class ='form-group row'>
+		<span class =''>Products:</span>
+		<select [(ngModel)]= "product" (change)= "recalculateTotal(product.Id)" class ='col-form-label col-sm-4'>
+			<option *ngFor="let product of products" [ngValue] = "product">{{product.Name}}</option>
+		</select>
 
-				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Id:</label>
-				<input [(ngModel)]='lineitem.Id' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="First Name">
+	</div>
+	<div class ='form-group row'>
 
-			</div>
+		<label class = 'col-form-label col-sm-2' for='useremail'>Quantity: </label>
+		<input [(ngModel)]='lineitem.Quantity' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='useremail' (keyup)= "recalculateTotal(lineitem.ProductID)" aria-describedby="emailHelp" placeholder="Quantity">
 
-			<div class ='form-group row'>
+	</div>
 
-				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>PurchaseRequestID:</label>
-				<input [(ngModel)]='lineitem.PurchaseRequestID' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="First Name">
-			</div>
-
-			<div class ='form-group row'>
-
-				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Quantity:</label>
-				<input [(ngModel)]='lineitem.Quantity' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="First Name">
-
-			</div>
-
-			<div class ='form-group row'>
-
-				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>ProductID:</label>
-				<input [(ngModel)]='lineitem.ProductID' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="unit">
-				<small id="emailHelp" class="form-text text-muted col-sm-2"></small>
-
-			</div>
+	<div>
+		<span class =''>Total: {{lineitem.Total}} </span>
+	</div>
 
 		<div class ='form-group'>
 		<button (click)='change()' class="btn btn-primary">Update</button>
