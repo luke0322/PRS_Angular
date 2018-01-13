@@ -9,6 +9,11 @@ const url ='http://localhost:8080/LineItems/';
 @Injectable()
 export class LineItemService {
 
+	lines(id): Observable<LineItem[]>{
+		return this.http.get(url + "LinesForPR?id=" + id) as Observable<LineItem[]>;
+		//will look like localhost:8080/PurchaseRequests/List get call
+	}
+
 	list(): Observable<LineItem[]>{
 		return this.http.get(url + "List") as Observable<LineItem[]>;
 		//will look like localhost:8080/LineItems/List get call

@@ -60,6 +60,7 @@ const routes: Routes =[
 {path: 'lineitem/edit/:id', component: LineitemEditComponent},
 {path: 'lineitem/create', component: LineitemCreateComponent},
 {path: 'lineitem/list', component: LineitemListComponent},
+{path: 'lineitem/LinesForPR/:Id', component: LineitemListComponent},
 
 {path: 'status', component: StatusListComponent},
 {path: 'status/detail/:id', component: StatusDetailComponent}

@@ -8,6 +8,7 @@ import { UserService} from '../../../service/user.service';
 import { User } from '../../../model/user';
 import { LineItemService} from '../../../service/lineitem.service';
 import { LineItem } from '../../../model/lineitem';
+import { Round } from '../../../util/rounding';
 
 @Component({
   selector: 'app-lineitem-edit',
@@ -19,6 +20,7 @@ export class LineitemEditComponent implements OnInit {
 
   id: string;
   resp: any;
+  prod: Product;
 
   lineitem: LineItem; //used for dropdown box
 
@@ -32,10 +34,13 @@ export class LineitemEditComponent implements OnInit {
    		});
    }
 
-   // compareFn(v1: number, v2: number):boolean{
-   // 		return v1 == v2;
-   // } we may need this for product edit to work (test thoroughly)
-
+   recalculateTotal() {
+     this.ProductSvc.get(this.lineitem.ProductID)
+     .subscribe(product => {
+       this.prod = product.length > 0 ? product[0]: null;
+       this.lineitem.Total = Round((this.lineitem.Quantity * this.prod.Price),2);
+     });
+  }
 
   constructor(private ProductSvc: ProductService,
   			  private UserSvc: UserService,

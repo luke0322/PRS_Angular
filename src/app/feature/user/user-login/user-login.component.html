@@ -1,8 +1,3 @@
-<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous">
-  </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class ="logintitle">
@@ -11,8 +6,7 @@
 <div class ="loginbody">
 		<input [(ngModel)]='user.UserName' name = 'Username' type ='text' class = 'col-sm-6' id ='username' aria-describedby="emailHelp" placeholder="Username">
 
-		<input [(ngModel)]='user.Password' style="margin-top:18px; margin-bottom: 18px;" name = 'Password' type ='text' class = 'col-sm-6' id ='pw' aria-describedby="emailHelp" placeholder="Password" onkeydown = "if (event.keyCode == 13) document.getElementById('butid').click()">
-
+		<input [(ngModel)]='user.Password' style="margin-top:18px; margin-bottom: 18px;" name = 'Password' type ='password' class = 'col-sm-6' id ='pw' aria-describedby="emailHelp" placeholder="Password" onkeydown = "if (event.keyCode == 13) document.getElementById('butid').click()">
 	<div class ="form-group">
 		<span><button id ="butid" (click)='login()' class="btn btn-success">Login</button></span>
 		<span><button routerLink = '/user/list/{{user.UserName}}' class="btn btn-danger">Forgot your password?</button></span>  

@@ -9,7 +9,7 @@ import { LineItem } from '../../../model/lineitem';
   styleUrls: ['./lineitem-detail.component.css']
 })
 export class LineitemDetailComponent implements OnInit {
-  title: string = "Purchase Request Detail";
+  title: string = "Line Item Detail";
 
   id: string;
   resp: any;

@@ -4,9 +4,9 @@ export class PurchaseRequest{
 	Id: number;
 	Description: string;
 	Justification: string;
-	DateNeeded: Date;
+	DateNeeded: number;
 	DeliveryMode: string;
-	StatusID: Status;
+	StatusID: number;
 	Total: number;
 	SubmittedDate: Date;
 	UserID: number;
@@ -17,7 +17,7 @@ export class PurchaseRequest{
 	static sortableKeys = ['Id','Justification','DeliveryMode','DateNeeded','Description','StatusID', 'Total', 'SubmittedDate', 'UserID'];
 
 	constructor(Id: number = 0, Description: string = '',Justification: string = '', DeliveryMode: string = '',
-		StatusID:Status = null,Total: number = 0, UserID:number = 0){
+		StatusID:number = null,Total: number = 0, UserID:number = 0){
 		this.Id = Id;
 		this.Description = Description;
 		this.Justification = Justification;

@@ -17,16 +17,20 @@
 
 	</div>
 	<div class ='form-group row'>
-
-		<label class = 'col-form-label col-sm-2' for='userlastname'>ProductID:</label>
-		<input [(ngModel)]='lineitem.ProductID' name = 'Lastname' type ='text' class = 'form-control col-sm-4' id ='userlastname' aria-describedby="emailHelp" placeholder="Last Name">
+		<span class =''>Products:</span>
+		<select [(ngModel)]= "product" (change)= "recalculateTotal(product.Id)" class ='custom-select text-sm-left'>
+			<option *ngFor="let product of products" [ngValue] = "product">{{product.Name}}</option>
+		</select>
 
 	</div>
 	<div class ='form-group row'>
 
 		<label class = 'col-form-label col-sm-2' for='useremail'>Quantity: </label>
-		<input [(ngModel)]='lineitem.Quantity' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='useremail' aria-describedby="emailHelp" placeholder="Email">
+		<input [(ngModel)]='lineitem.Quantity' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='useremail' (keyup)= "recalculateTotal(lineitem.ProductID)" aria-describedby="emailHelp" placeholder="Quantity">
 
+	</div>
+	<div>
+		<span class =''>Total: {{lineitem.Total}} </span>
 	</div>
 	<div class ='form-group'>
 		<button (click)='add()' class="btn btn-primary">Add new</button>

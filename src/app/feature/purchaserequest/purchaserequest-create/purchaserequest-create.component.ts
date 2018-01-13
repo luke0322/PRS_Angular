@@ -5,6 +5,8 @@ import { PurchaseRequest } from '../../../model/purchaserequest';
 import { UserService} from '../../../service/user.service';
 import { User } from '../../../model/user';
 import { SystemService} from '../../../service/system.service';
+import { Status } from '../../../model/status';
+import { StatusService} from '../../../service/status.service';
 
 @Component({
   selector: 'app-purchaserequest-create',
@@ -23,6 +25,7 @@ export class PurchaserequestCreateComponent implements OnInit {
 
   add(){
      console.log("this.purchaserequest", this.purchaserequest);
+     console.log("dateneeded", this.purchaserequest.DateNeeded);
    	 this.PurchaserequestSvc.add(this.purchaserequest)
    		.subscribe(resp =>{
    			this.resp = resp;
@@ -36,6 +39,7 @@ export class PurchaserequestCreateComponent implements OnInit {
           private UserSvc: UserService) { }
 
   ngOnInit() {
+    this.purchaserequest.StatusID = 1;
     // this.UserSvc.list()
     //   .subscribe(users => this.user = users);
     if(this.SysSvc.data.user.loggedIn) {

@@ -10,13 +10,6 @@
 <p *ngIf='!purchaserequest'>Loading... </p>
 
 		<div *ngIf='purchaserequest'>
-		<div class='form-group row' >
-		    <label class='col-form-label col-sm-4' for="purchaserequestuser">User:</label>
-			<div class=' col-sm-4 select-list'>
-				<select [(ngModel)]='purchaserequest.UserID' class='form-control' name='User' id="purchaserequest-User" disabled="disabled">
-				</select>
-			</div>
-		</div>
 
 			<div class ='form-group row'>
 
@@ -34,7 +27,7 @@
 			<div class ='form-group row'>
 
 				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Date Needed:</label>
-				<input [(ngModel)]='purchaserequest.DateNeeded' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Date Needed">
+				<input [(ngModel)]='purchaserequest.DateNeeded' name = 'Firstname' type ='date' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Date Needed">
 			</div>
 
 			<div class ='form-group row'>
@@ -42,26 +35,6 @@
 				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Delivery Mode:</label>
 				<input [(ngModel)]='purchaserequest.DeliveryMode' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="DeliveryMode">
 			</div>
-
-			<div class ='form-group row'>
-
-				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Status ID:</label>
-				<input [(ngModel)]='purchaserequest.StatusID' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="photo path">
-
-			</div>
-
-			<div class ='form-group row'>
-
-				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Total:</label>
-				<input [(ngModel)]='purchaserequest.Total' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="photo path">
-
-			</div>
-<!-- 			<div class ='form-group row'>
-
-				<label class = 'col-form-label col-sm-4' for='vendorfirstname'>Submitted Date:</label>
-				<input [(ngModel)]='purchaserequest.SubmittedDate' name = 'Firstname' type ='text' class = 'form-control col-sm-4' id ='vendorfirstname' aria-describedby="emailHelp" placeholder="Submitted Date">
-
-			</div> -->
 	<div class ='form-group'>
 		<button (click)='add()' class="btn btn-primary">Create</button>
 	</div>
