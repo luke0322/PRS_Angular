@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LineItemService} from '../../../service/lineitem.service';
 import { LineItem } from '../../../model/lineitem';
+import { PurchaserequestService} from '../../../service/purchaserequest.service';
+import { PurchaseRequest } from '../../../model/purchaserequest';
 
 @Component({
   selector: 'app-lineitem-detail',
@@ -15,6 +17,7 @@ export class LineitemDetailComponent implements OnInit {
   resp: any;
 
   lineitem:LineItem;
+  purchaseRequest: PurchaseRequest;
 
    delete(){
      console.log("this.lineitem.id = ", this.lineitem.Id);

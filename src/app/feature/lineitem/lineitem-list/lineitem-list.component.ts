@@ -11,13 +11,14 @@ import { LineItem } from '../../../model/lineitem';
   styleUrls: ['./lineitem-list.component.css']
 })
 export class LineitemListComponent implements OnInit {
-  title: string ='LineItem List';
+  title: string ='Line Item List';
   selectedSortKey: string = 'Id';
   sortDesc: string = 'asc';
   sortKeys: string[] = LineItem.sortableKeys;
   lineitems: LineItem[];
   id: number;
-  // purchaserequest: PurchaseRequest = new PurchaseRequest();
+
+  purchaserequest:PurchaseRequest;
   
   constructor(private LineitemSvc: LineItemService,
               private router: Router,
@@ -26,13 +27,15 @@ export class LineitemListComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(parms => this.id = parms['Id']);
-    // this.route.params.subscribe(parms => console.log(parms['id']));
-    // this.route.params.subscribe(parms => console.log(parms));
     console.log(this.id);
   	this.LineitemSvc.lines(this.id)
   	.subscribe(lineitems=> {
   		this.lineitems = lineitems;
       console.log(lineitems);
   	});
+    this.PurchaseRequestSvc.get(this.id)
+       .subscribe(purchaseRequests => {
+         this.purchaserequest = purchaseRequests.length > 0 ? purchaseRequests[0]: null;
+       });
   }
 }
