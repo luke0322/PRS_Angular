@@ -36,7 +36,7 @@
 
 </tr>
 </thead> 
-<tr *ngFor='let purchaseRequest of purchaseRequests | sort:selectedSortKey:sortDesc'>
+<tr id="purchaseRequest{{purchaseRequest.Id}}" *ngFor='let purchaseRequest of purchaseRequests | sort:selectedSortKey:sortDesc'>
 		<td>{{purchaseRequest.Id}}</td> 
 		<td>{{purchaseRequest.Description}}</td> 
 		<td>{{purchaseRequest.Justification}}</td>
@@ -50,8 +50,8 @@
 		<td class = 'actions'>
 			<a routerLink = '/purchaserequest/detail/{{purchaseRequest.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
 			<a routerLink = '/purchaserequest/edit/{{purchaseRequest.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
-			<a routerLink = '/lineitem/LinesForPR/{{purchaseRequest.Id}}'><img src = 'assets/lines.png' title = 'Line Item'></a>
-			<!-- <a routerLink = '/purchaserequestlineitem/list/{{purchaserequestlineitem.Id}}'> -->
+			<a (click) = "appendLineItems($event)" href="#"><img name ="prlist{{purchaseRequest.Id}}"  src = 'assets/lines.png' title = 'Line Item'></a>
+			<!-- <a routerLink = '/lineitem/LinesForPR/{{purchaseRequest.Id}}'><img src = 'assets/lines.png' title = 'Line Item'></a> -->
 		</td>
 </tr>
 </table>
