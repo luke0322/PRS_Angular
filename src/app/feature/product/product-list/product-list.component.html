@@ -3,15 +3,15 @@
 	<div class =''>
 		<div class ='lefthalf'>
 			<span class ='component-title'>{{title}}</span>
-			<span><a routerLink ='/product/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
+			<span class ='actions'><a routerLink ='/product/create' *ngIf='SysSvc.data.user.instance.Admin'><img id ='createnew' width = '25' height = '25' src= 'assets/add-new.png' title ="Add New"></a></span>
 		</div>
 
 	<div class='righthalf input-group'>
-		<span class =''>Sort: </span>
+		<span class ='sortingmargin'>Sort: </span>
 		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left'>
 			<option *ngFor='let sortKey of sortKeys' value = '{{sortKey}}'>{{sortKey}}</option>
 		</select>
-		<span>Order:</span>
+		<span class='sortingmargin'>Order:</span>
 			<select [(ngModel)] = 'sortDesc' class ='custom-select text-sm-left'>
 				<option value = 'asc'>Asc</option>
 				<option value='desc'>Desc</option>
@@ -38,12 +38,12 @@
 		<td>{{product.Unit}}</td> 
 		<td>{{product.PartNumber}}</td>
 		<td>{{product.Name}}</td>
-		<td>{{product.Price}}</td>
+		<td>{{product.Price | currency}}</td>
 		<td>{{product.PhotoPath}}</td>
-		<td>{{product.Vendor}}</td> 
-		<td class = 'actions'>
+		<td>{{product.Vendor}}</td>
+		<td>
 			<a routerLink = '/product/detail/{{product.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
-			<a routerLink = '/product/edit/{{product.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
+			<a routerLink = '/product/edit/{{product.Id}}'><img *ngIf='SysSvc.data.user.instance.Admin' src = 'assets/edit.png' title = 'Edit'></a>
 		</td>
 </tr>
 </table>

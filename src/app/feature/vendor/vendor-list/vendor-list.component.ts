@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../../../service/vendor.service';
 import { Vendor } from '../../../model/vendor';
+import { SystemService } from '../../../service/system.service';
 
 @Component({
   selector: 'app-vendor-list',
@@ -10,12 +11,13 @@ import { Vendor } from '../../../model/vendor';
 export class VendorListComponent implements OnInit {
   
   title: string ='Vendor List';
-  selectedSortKey: string = 'Id';
+  selectedSortKey: string = 'State';
   sortDesc: string = 'asc';
   sortKeys: string[] = Vendor.sortableKeys;
   vendors: Vendor[];
   
-  constructor(private UserSvc: VendorService) { }
+  constructor(private UserSvc: VendorService,
+              private SysSvc: SystemService) { }
 
   ngOnInit() {
   	this.UserSvc.list()

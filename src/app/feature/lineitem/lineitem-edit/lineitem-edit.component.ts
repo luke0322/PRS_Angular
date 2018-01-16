@@ -31,7 +31,7 @@ export class LineitemEditComponent implements OnInit {
    		.subscribe(resp =>{
    			this.resp = resp;
   			console.log("Line Item Change:", this.resp);
-  			this.router.navigate(['/lineitem/list']);
+  			this.router.navigate(['/purchaserequest/list']);
    		});
    }
 

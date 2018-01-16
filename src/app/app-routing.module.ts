@@ -33,7 +33,7 @@ import { StatusDetailComponent } from './feature/status/status-detail/status-det
 
 const routes: Routes =[
 // {path: '', redirectTo: 'user/login',pathMatch: 'full'},
-{path: '', redirectTo: 'purchaserequest/list',pathMatch: 'full'}, //first path if empty
+{path: '', redirectTo: 'user/login',pathMatch: 'full'}, //first path if empty
 {path: 'about', component: AboutComponent},
 {path: 'user/detail/:id', component: UserDetailComponent},
 {path: 'user/edit/:id', component: UserEditComponent},
@@ -62,7 +62,7 @@ const routes: Routes =[
 {path: 'lineitem/list', component: LineitemListComponent},
 {path: 'lineitem/LinesForPR/:Id', component: LineitemListComponent},
 
-{path: 'status', component: StatusListComponent},
+{path: 'status/list', component: StatusListComponent},
 {path: 'status/detail/:id', component: StatusDetailComponent}
 ];
 

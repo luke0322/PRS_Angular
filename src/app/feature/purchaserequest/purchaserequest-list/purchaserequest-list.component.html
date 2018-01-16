@@ -2,15 +2,15 @@
 	<div class ='component-content'>
 		<div class ='lefthalf'>
 			<span class ='component-title'>{{title}}</span>
-			<span><a routerLink ='/purchaserequest/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
+			<span class='actions'><a routerLink ='/purchaserequest/create'><img id ='createnew' width = '25' height = '25' src= 'assets/add-new.png' title ="Add New"></a></span>
 		</div>
 
 	<div class='righthalf input-group'>
-		<span class =''>Sort: </span>
+		<span class ='sortingmargin'>Sort:</span>
 		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left' width ='20' height = '20'>
 			<option *ngFor='let sortKey of sortKeys' value = '{{sortKey}}'>{{sortKey}}</option>
 		</select>
-		<span>Order:</span>
+		<span class ='sortingmargin'>Order:</span>
 			<select [(ngModel)] = 'sortDesc' class ='custom-select text-sm-left'>
 				<option value = 'asc'>Asc</option>
 				<option value ='desc'>Desc</option>
@@ -19,7 +19,7 @@
 	</div>
 <div class ="component-content">
 <p *ngIf= '!purchaseRequests'>loading ... </p>
-<table class = "table table-sm table-striped table-bordered" *ngIf='purchaseRequests'>
+<table id="ourtable" class = "table table-sm table-striped table-bordered" *ngIf='purchaseRequests'>
 <thead class="table-inverse">
 <tr>
 	<th>ID</th>
@@ -36,23 +36,25 @@
 
 </tr>
 </thead> 
-<tr id="purchaseRequest{{purchaseRequest.Id}}" *ngFor='let purchaseRequest of purchaseRequests | sort:selectedSortKey:sortDesc'>
+<tbody>
+<tr id="purchaseRequest{{purchaseRequest.Id}}" *ngFor='let i = index;let purchaseRequest of purchaseRequests | sort:selectedSortKey:sortDesc'>
 		<td>{{purchaseRequest.Id}}</td> 
 		<td>{{purchaseRequest.Description}}</td> 
 		<td>{{purchaseRequest.Justification}}</td>
 		<td>{{purchaseRequest.DateNeeded}}</td>
 		<td>{{purchaseRequest.DeliveryMode}}</td>
 		<td>{{purchaseRequest.StatusID}}</td>
-		<td>{{purchaseRequest.Total}}</td>
+		<td>{{purchaseRequest.Total | currency}}</td>
 		<td>{{purchaseRequest.SubmittedDate}}</td> 
 		<td>{{purchaseRequest.UserID}}</td>  
 
-		<td class = 'actions'>
+		<td id={{i}} class = 'actions'>
 			<a routerLink = '/purchaserequest/detail/{{purchaseRequest.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
 			<a routerLink = '/purchaserequest/edit/{{purchaseRequest.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
-			<a (click) = "appendLineItems($event)" href="#"><img name ="prlist{{purchaseRequest.Id}}"  src = 'assets/lines.png' title = 'Line Item'></a>
-			<!-- <a routerLink = '/lineitem/LinesForPR/{{purchaseRequest.Id}}'><img src = 'assets/lines.png' title = 'Line Item'></a> -->
+			<!-- <a id="abc1" (click) = "appendLineItems($event)" href="#"><img name ="prlist{{purchaseRequest.Id}}"  src = 'assets/lines.png' title = 'Line Item'></a> -->
+			<a routerLink = '/lineitem/LinesForPR/{{purchaseRequest.Id}}'><img src = 'assets/lines.png' title = 'Line Item'></a>
 		</td>
 </tr>
+</tbody>
 </table>
 </div>

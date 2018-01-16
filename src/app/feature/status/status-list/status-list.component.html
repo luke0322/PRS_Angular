@@ -6,11 +6,11 @@
 		</div>
 
 	<div class='righthalf input-group'>
-		<span class =''>Sort: </span>
+		<span class ='sortingmargin'>Sort: </span>
 		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left'>
 			<option *ngFor='let sortKey of sortKeys' value = '{{sortKey}}'>{{sortKey}}</option>
 		</select>
-		<span>Order:</span>
+		<span class='sortingmargin'>Order:</span>
 			<select [(ngModel)] = 'sortDesc' class ='custom-select text-sm-left'>
 				<option value = 'asc'>Asc</option>
 				<option value='desc'>Desc</option>

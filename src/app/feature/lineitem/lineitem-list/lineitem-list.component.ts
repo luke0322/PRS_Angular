@@ -5,6 +5,7 @@ import { Product } from '../../../model/product';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LineItemService } from '../../../service/lineitem.service';
 import { LineItem } from '../../../model/lineitem';
+import { SystemService } from '../../../service/system.service';
 @Component({
   selector: 'app-lineitem-list',
   templateUrl: './lineitem-list.component.html',
@@ -24,7 +25,8 @@ export class LineitemListComponent implements OnInit {
   constructor(private LineitemSvc: LineItemService,
               private router: Router,
               private route: ActivatedRoute,
-              private PurchaseRequestSvc: PurchaserequestService) { }
+              private PurchaseRequestSvc: PurchaserequestService,
+              private SysSvc: SystemService) { }
 
   ngOnInit() {
     this.route.params.subscribe(parms => this.id = parms['Id']);

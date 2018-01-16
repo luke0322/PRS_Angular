@@ -40,7 +40,10 @@
 			<th>UserID</th>
 			<td>{{purchaserequest.UserID}}</td>
 		</tr>
-
+		<tr>
+			<th>Total</th>
+			<td>{{purchaserequest.Total | currency}}</td>
+		</tr>
   <tr><td colspan ="2">
 	<a routerLink='/purchaserequest/edit/{{purchaserequest.Id}}' class = 'btn btn-primary' title = 'Edit'>Edit</a>
 	<button (click)= "delete()" style = "margin-left: 46px;" class = "btn btn-danger" title = "Delete">Delete</button>

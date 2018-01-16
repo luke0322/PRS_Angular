@@ -3,15 +3,15 @@
 	<div class =''>
 		<div class ='lefthalf'>
 			<span class ='component-title'>{{title}}</span>
-			<span><a routerLink ='/user/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
+			<span class='actions'><a routerLink ='/user/create' *ngIf='SysSvc.data.user.instance.Admin'><img id ='createnew' width = '25' height = '25' src= 'assets/add-new.png' title ="Add New"></a></span>
 		</div>
 
 	<div class='righthalf input-group'>
-		<span class =''>Sort:</span>
+		<span class ='sortingmargin'>Sort:</span>
 		<select [(ngModel)]= 'selectedSortKey' class ='custom-select text-sm-left'>
 			<option *ngFor='let sortKey of sortKeys' value = '{{sortKey}}'>{{sortKey}}</option>
 		</select>
-		<span>Order:</span>
+		<span class='sortingmargin'>Order:</span>
 			<select [(ngModel)] = 'sortDesc' class ='custom-select text-sm-left'>
 				<option value = 'asc'>Asc</option>
 				<option value='desc'>Desc</option>
@@ -28,7 +28,7 @@
 	<th>Name</th>
 	<th>PhoneNumber</th>
 	<th>Email</th>
-	<th>Priv</th>
+	<th>Privileges</th>
 	<th>Actions</th>
 
 </tr> 
@@ -41,10 +41,10 @@
 		<td>{{user.FirstName}} {{user.LastName}}</td>
 		<td>{{user.PhoneNumber}}</td>
 		<td>{{user.Email}}</td>
-		<td>{{user.Admin ? "Adm": ""}} {{user.Reviewer? "Rev": ""}} {{user.Active ? "Act": ""}}</td> <!--not served up -->
+		<td>{{user.Admin ? "Admin": ""}} {{user.Reviewer? "Reviewer": ""}} {{user.Active ? "Active": ""}}</td> <!--not served up -->
 		<td class = 'actions'>
-			<a routerLink = '/user/detail/{{user.Id}}'><img src = 'assets/detail.png' title = 'Detail'></a>
-			<a routerLink = '/user/edit/{{user.Id}}'><img src = 'assets/edit.png' title = 'Edit'></a>
+			<a routerLink = '/user/detail/{{user.Id}}'><img *ngIf='SysSvc.data.user.instance.Admin' src = 'assets/detail.png' title = 'Detail'></a>
+			<a routerLink = '/user/edit/{{user.Id}}'><img *ngIf='SysSvc.data.user.instance.Admin' src = 'assets/edit.png' title = 'Edit'></a>
 		</td>
 	</tr>
 </table>

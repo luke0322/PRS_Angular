@@ -26,11 +26,10 @@ export class LineitemCreateComponent implements OnInit {
    		.subscribe(resp =>{
    			this.resp = resp;
   			console.log("Line Item Add:", this.resp);
-  			this.router.navigate(['/lineitem/list']);
+  			this.router.navigate(['/purchaserequest/list']);
    		});
    }
    recalculateTotal(val) {
-     // console.log(val);
      this.ProdSvc.get(val)
      .subscribe(product => {
        this.prod = product.length > 0 ? product[0]: null;

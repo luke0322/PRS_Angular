@@ -4,7 +4,7 @@
 </div>
 
 <div class ='righthalf'>
-			<span><a routerLink = '/lineitem/list'>Back to list</a></span>
+			<span><a routerLink = '/purchaserequest/list'>Back to list</a></span>
 </div>
 
 <p *ngIf='!lineitem'>Loading... </p>
@@ -12,7 +12,7 @@
 	<div *ngIf='lineitem' style = "margin-left: 30px;">
 
 	<div class ='form-group row'>
-		<span class =''>Products:</span>
+		<span style="margin-left: 15px; margin-right: 124px;" class =''>Products:</span>
 		<select [(ngModel)]= "product" (change)= "recalculateTotal(product.Id)" class ='col-form-label col-sm-4'>
 			<option *ngFor="let product of products" [ngValue] = "product">{{product.Name}}</option>
 		</select>
@@ -26,10 +26,10 @@
 	</div>
 
 	<div>
-		<span class =''>Total: {{lineitem.Total}} </span>
+		<span style="margin-right: 130px;" class =''>Total: &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{lineitem.Total}} </span>
 	</div>
 
 		<div class ='form-group'>
-		<button (click)='change()' class="btn btn-primary">Update</button>
+		<button style="margin-left:290px;" (click)='change()' class="btn btn-primary">Update</button>
 		</div>
 	</div>

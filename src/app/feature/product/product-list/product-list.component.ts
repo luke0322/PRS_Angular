@@ -3,7 +3,7 @@ import { ProductService } from '../../../service/product.service';
 import { Product } from '../../../model/product';
 import { VendorService } from '../../../service/vendor.service';
 import { Vendor } from '../../../model/vendor';
-
+import { SystemService } from '../../../service/system.service';
 
 @Component({
   selector: 'app-product-list',
@@ -13,13 +13,14 @@ import { Vendor } from '../../../model/vendor';
 export class ProductListComponent implements OnInit {
 
   title: string ='Product List';
-  selectedSortKey: string = 'Id';
+  selectedSortKey: string = 'Price';
   sortDesc: string = 'asc';
   sortKeys: string[] = Product.sortableKeys;
   products: Product[];
   
   constructor(private ProductSvc: ProductService,
-              private VendorSvc: VendorService) { }
+              private VendorSvc: VendorService,
+              private SysSvc: SystemService) { }
 
   ngOnInit() {
   	this.ProductSvc.list()

@@ -23,7 +23,7 @@
 
 		<tr>
 			<th>Price</th>
-			<td>{{product.Price}}</td>
+			<td>{{product.Price | currency}}</td>
 		</tr>
 
 		<tr>
@@ -35,7 +35,7 @@
 			<th>Photo Path</th>
 			<td>{{product.PhotoPath}}</td>
 		</tr>
-
+		
   <tr><td colspan ="2">
 	<a routerLink='/product/edit/{{product.Id}}' class = 'btn btn-primary' title = 'Edit'>Edit</a>
 	<button (click)= "delete()" style = "margin-left: 46px;" class = "btn btn-danger" title = "Delete">Delete</button>

@@ -2,11 +2,15 @@
 	<div class ='component-content'>
 		<div class ='lefthalf'>
 			<span class ='component-title'>{{title}}</span>
-			<span><a routerLink ='/lineitem/create'><img id ='createnew' width = '20' height = '20' src= 'assets/add-new.png' title ="Add New"></a></span>
+			<span class='actions'><a routerLink ='/lineitem/create'><img id ='createnew' width = '25' height = '25' src= 'assets/add-new.png' title ="Add New"></a></span>
 		</div>
 
 	<div class ='righthalf'>
 			<span><a routerLink = '/purchaserequest/list'>Back to list</a></span>
+			<span style="margin-left: 90px;" *ngIf='SysSvc.data.user.instance.Reviewer'>
+				<button class="btn btn-primary">Approve</button>
+				<button style ="margin-left: 20px;" class="btn btn-danger">Reject</button>
+			</span>
 		</div>
 	</div>
 <div class ="component-content">
@@ -27,7 +31,7 @@
 				<td>{{purchaserequest.Id}}</td> 
 				<td>{{purchaserequest.Description}}</td> 
 				<td>{{purchaserequest.StatusID}}</td>
-				<td>{{purchaserequest.Total}}</td>
+				<td>{{purchaserequest.Total | currency}}</td>
 		</tr>
 		</table>
 

@@ -12,7 +12,7 @@ import { SystemService} from '../../../service/system.service';
 export class UserLoginComponent implements OnInit {
 
 	message: string = '';
-	user: User = new User(0,'','','','','','',false,false,false,null);
+	user: User = new User();
 
 	login(){
 		this.UserSvc.authenticate(this.user.UserName, this.user.Password)
